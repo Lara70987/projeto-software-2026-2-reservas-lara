@@ -47,7 +47,7 @@ jobs:
           script: |
             docker stop reservas
             docker rm --force reservas
-            docker run  -d -p 8081:8081 -e DB_HOST=postrgres-aula --name reservas larinhazzz/reservas-ci:${{ github.sha }}
+            docker run  -d -p 8081:8081 -e DB_HOST=postrgres-aula --network rede --name reservas larinhazzz/reservas-ci:${{ github.sha }}
 
 
 
